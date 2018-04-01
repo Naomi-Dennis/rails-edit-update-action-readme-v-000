@@ -667,3 +667,22 @@ Did you mean?  catch):
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (36.5ms)
+
+
+Started GET "/posts/1/edit" for 148.75.220.188 at 2018-04-01 22:24:42 +0000
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered posts/edit.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 20ms (Views: 18.1ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/posts/1" for 148.75.220.188 at 2018-04-01 22:24:45 +0000
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WLHnL0/vx1tekbbqH4H3xFN/g3k++kQWhaw29DQZgFmCrf5X++NVmE8jHv8i+nERwq0wWpUjk0ZKIDJt6sD6HA==", "title"=>"Rails Introduction Quiz", "description"=>"asdfasdfasd", "commit"=>"Submit Post", "id"=>"1"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "posts" SET "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?  [["description", "asdfasdfasd"], ["updated_at", "2018-04-01 22:24:45.464193"], ["id", 1]]
+  [1m[36m (68.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://192.241.157.192:60630/posts/1
+Completed 302 Found in 77ms (ActiveRecord: 68.6ms)
