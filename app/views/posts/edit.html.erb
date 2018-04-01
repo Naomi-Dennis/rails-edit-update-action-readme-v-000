@@ -1,5 +1,5 @@
-<p> Editing Post </p> 
-<%= form_tag posts_path do %>
+<p> Editing Post </p>
+<%= form_tag edit_post(@post) do %>
   <label>Post title:</label><br>
   <%= text_field_tag :title %><br>
 
