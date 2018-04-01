@@ -1,5 +1,5 @@
 <p> Editing Post </p>
-<%= form_tag post_path(@post), method: patch do %>
+<%= form_tag post_path(@post), method: "patch" do %>
   <label>Post title:</label><br>
   <%= text_field_tag :title, @post.title %><br>
 
